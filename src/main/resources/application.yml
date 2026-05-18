@@ -1,19 +1,24 @@
 spring:
   application:
     name: pjt-codefather
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/pjt_ai_code
+      username: root
+      password: pjt3131
 server:
   port: 8080
   servlet:
-    # ?????,??????????????????????????
+    # 项目路径,用于解决跨域问题
     context-path: /api
 
-# springdoc-openapi????
+# springdoc-openapi配置,用于生成api文档
 springdoc:
   group-configs:
     - group: 'default'
       paths-to-match: '/**'
       packages-to-scan: com.ppjjtt.pjtcodefather.controller
-# knife4j???????????????
+# knife4j配置,用于生成api文档
 knife4j:
   enable: true
   setting:
